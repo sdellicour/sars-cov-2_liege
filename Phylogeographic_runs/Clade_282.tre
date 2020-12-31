@@ -1,0 +1,4 @@
+#NEXUS
+begin trees;
+	tree tree_1 = [&R] (hCoV-19/Belgium/LL-0328341/2020|EPI_ISL_462195|2020-03-28|Europe:0.02543557377,((SARS2-CoV/Belgium/Human/rega-0621709:1.601092884e-05,SARS2-CoV/Belgium/Human/rega-0712715:0.05739306011):0.23874,SARS2-CoV/Belgium/Human/rega-0413578:0.05023142077):0.01892);
+end;

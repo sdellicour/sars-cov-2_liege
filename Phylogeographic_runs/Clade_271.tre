@@ -1,0 +1,4 @@
+#NEXUS
+begin trees;
+	tree tree_1 = [&R] ((SARS2-CoV/Belgium/Human/rega-0915954:8.688524642e-06,SARS2-CoV/Belgium/Human/rega-0917993:0.005473169399):0.01124077133,(SARS2-CoV/Belgium/Human/rega-0911939:9.72677591e-06,SARS2-CoV/Belgium/Human/rega-0911936:9.72677591e-06):0.0003107713259):0.7310492287;
+end;
