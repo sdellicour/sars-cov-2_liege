@@ -8,8 +8,8 @@ library(treeio)
 # 1. Loading and preparing the different GIS files used in the scripts
 # 2. Preparing the input files for the discrete phylogeographic analyses 
 # 3. Analysing the outputs of the preliminary discrete phylogeographic analysis 
-# 4. Preparing the continuous phylogeographic analysis (RRW, Cauchy model)
-# 5. Identifying the different clusters (clades following introduction events)
+# 4. Identifying the different clusters (clades following introduction events)
+# 5. Preparing the continuous phylogeographic analysis (RRW, Cauchy model)
 # 6. Running BEAST and building the maximum clade consensus (MCC) tree
 # 7. Extracting spatio-temporal information embedded in MCC and posterior trees
 # 8. Generating the dispersal history graphs (mapped MCC trees, 80% HPD polygons)
@@ -339,7 +339,7 @@ if (showingPlots)
 		dev.off()
 	}
 
-# 5. Identifying the different clusters (clades following introduction events)
+# 4. Identifying the different clusters (clades following introduction events)
 
 tree = readAnnotatedNexus(paste0(analysis,".tree"))
 belgianBranches = c(); belgianIntroductions = c()
@@ -499,7 +499,7 @@ if (showingPlots)
 			 labels=c("01-03","01-05","01-07","01-09","01-11"))
 	}
 
-# 4. Preparing the continuous phylogeographic analysis (RRW, Cauchy model)
+# 5. Preparing the continuous phylogeographic analysis (RRW, Cauchy model)
 
 template = scan("RRW_template_2.xml", what="", sep="\n", quiet=T, blank.lines.skip=F); xml = c()
 sink(file=paste0("Phylogeographic_runs/All_clades_NEW.xml"))
