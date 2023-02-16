@@ -160,8 +160,9 @@ if (computingHPDInterval)
 			}
 		saveRDS(belgian_tMRCAs_list, file="Belgian_tMRCAs.rds")
 		quantiles = quantile(belgianIntroductions_list[!is.na(belgianIntroductions_list)],probs=c(0.025,0.975))
+		HPD = HDInterval::hdi(belgianIntroductions_list[!is.na(belgianIntroductions_list)])[1:2]
 		cat("A minimum number of ",median(belgianIntroductions_list[!is.na(belgianIntroductions_list)])," lineage introductions (95% HPD interval = [",
-			quantiles[1],"-",quantiles[2],"])"," identified from the global phylogenetic analysis of ",belgianTipBranches," SARS-CoV-2 sampled in Belgium",sep="")
+			HPD[1],"-",HPD[2],"])"," identified from the global phylogenetic analysis of ",belgianTipBranches," SARS-CoV-2 sampled in Belgium",sep="")
 		# Results for the analysis based on the IQTREE+TreeTime tree of the 01-12-20:
 			# a minimum number of 338 lineage introductions (95% HPD interval = [312-353]) identified from the global phylogenetic analysis of 2114 SARS-CoV-2 sampled in Belgium
 		trees = scan(paste0("DTA_on_Liege_province/",analysis,".trees"), what="", sep="\n", quiet=T, blank.lines.skip=F)
@@ -201,8 +202,9 @@ if (computingHPDInterval)
 			}
 		saveRDS(liege_tMRCAs_list, file="Belgian_tMRCAs.rds")
 		quantiles = quantile(liegeIntroductions_list[!is.na(liegeIntroductions_list)],probs=c(0.025,0.975))
+		HPD = HDInterval::hdi(liegeIntroductions_list[!is.na(liegeIntroductions_list)])[1:2]
 		cat("A minimum number of ",median(liegeIntroductions_list[!is.na(liegeIntroductions_list)])," lineage introductions (95% HPD interval = [",
-			quantiles[1],"-",quantiles[2],"])"," identified from the global phylogenetic analysis of ",liegeTipBranches," SARS-CoV-2 sampled in Liège",sep="")
+			HPD[1],"-",HPD[2],"])"," identified from the global phylogenetic analysis of ",liegeTipBranches," SARS-CoV-2 sampled in Liège",sep="")
 		# Results for the analysis based on the IQTREE+TreeTime tree of the 01-12-20:
 			# a minimum number of 244 lineage introductions (95% HPD interval = [239-250]) identified from the global phylogenetic analysis of 869 SARS-CoV-2 sampled in Liège
 	}
